@@ -1,4 +1,4 @@
-<?
+<?php
 require 'Predis/Autoloader.php';
 Predis\Autoloader::register();
 
@@ -39,7 +39,10 @@ function redisLink() {
     static $r = false;
 
     if ($r) return $r;
-    $r = new Predis\Client();
+    // $r = new Predis\Client();
+    $r = new Predis\Client([
+      'database' => 2
+    ]);
     return $r;
 }
 
