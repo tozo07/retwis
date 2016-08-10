@@ -3,9 +3,10 @@ require 'Predis/Autoloader.php';
 Predis\Autoloader::register();
 
 function getrand() {
-    $fd = fopen("/dev/urandom","r");
-    $data = fread($fd,16);
-    fclose($fd);
+    // $fd = fopen("/dev/urandom","r");
+    // $data = fread($fd,16);
+    // fclose($fd);
+    $data = microtime();
     return md5($data);
 }
 
