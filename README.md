@@ -5,6 +5,17 @@ at the same time to show different Redis data structures.
 You can find a tutorial explaining step by step how the example was created
 in the [Twitter clone tutorial of the Redis documentation](http://redis.io/topics/twitter-clone).
 
+You can run this application with the following docker commands:
+```
+docker build -t retwis:1.0 .
+docker run --name redis redis
+docker run -tid --link redis:redis --name retwis -p 80:80 retwis:1.0
+```
+If you need check the redis values directly:
+```
+docker run -it --link redis:redis --rm redis redis-cli -h redis -p 6379
+```
+
 This code was written back in 2009 when Redis was initially published, in order
 to expose interested developers to the Redis concepts and data types.
 Later, in May 2014, it was reworked in order to update it to *modern Redis*,
