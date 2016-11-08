@@ -8,7 +8,7 @@ in the [Twitter clone tutorial of the Redis documentation](http://redis.io/topic
 You can run this application with the following docker commands:
 ```
 docker build -t retwis:1.0 .
-docker run --name redis redis
+docker run -tid --name redis redis
 docker run -tid --link redis:redis --name retwis -p 80:80 retwis:1.0
 ```
 If you need check the redis values directly:
